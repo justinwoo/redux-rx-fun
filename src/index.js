@@ -122,6 +122,18 @@ function projectDecrement() {
   };
 }
 
+function incrementAction(): Action {
+  return {
+    type: INCREMENT
+  };
+}
+
+function decrementAction(): Action {
+  return {
+    type: DECREMENT
+  };
+}
+
 const rxCallbacks = {
   increment: function () {
     increment$.onNext();
@@ -133,13 +145,11 @@ const rxCallbacks = {
 
 const rxState$ = Rx.Observable
   .merge(
-    increment$.map(projectIncrement),
-    decrement$.map(projectDecrement)
+    increment$.map(incrementAction),
+    decrement$.map(decrementAction)
   )
   .startWith(initState)
-  .scan(function (state, project) {
-    return project(state);
-  });
+  .scan(projectRedux);
 
 rxState$.subscribe(function (rxState: State) {
   console.log('rxState', rxState);
