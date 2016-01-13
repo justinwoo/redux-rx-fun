@@ -1,6 +1,9 @@
 [ignore]
 build
+.*/node_modules/react/.*
 .*/node_modules/fbjs.*
+.*/node_modules/babel.*
+.*/node_modules/babylon.*
 
 [include]
 node_modules
@@ -8,3 +11,4 @@ node_modules
 [libs]
 
 [options]
+esproposal.class_static_fields=enable

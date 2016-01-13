@@ -6,22 +6,36 @@
   "scripts": {
     "start": "webpack -wdc --progress",
     "watch-flow": "watch 'flow check' src -d -u",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "babel": "^6.3.26",
     "babel-core": "^6.3.26",
+    "babel-jest": "^6.0.1",
     "babel-loader": "^6.2.0",
+    "babel-plugin-transform-class-properties": "^6.4.0",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "flow-bin": "^0.20.1",
+    "jest-cli": "^0.8.2",
     "react": "^0.14.5",
     "react-dom": "^0.14.5",
     "redux": "^3.0.5",
     "rx": "^4.0.7",
     "watch": "^0.17.1",
     "webpack": "^1.12.9"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/jest/preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/redux",
+      "<rootDir>/node_modules/rx",
+      "<rootDir>/node_modules/fbjs",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils"
+    ]
   }
 }
