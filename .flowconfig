@@ -6,9 +6,9 @@ build
 .*/node_modules/babylon.*
 
 [include]
-node_modules
 
 [libs]
+interfaces/
 
 [options]
 esproposal.class_static_fields=enable

@@ -36,6 +36,7 @@ export const rxCallbacks = {
   }
 };
 
+// doesn't throw errors?...
 export const rxState$ = Rx.Observable
   .merge(
     increment$.map(projectIncrement),
