@@ -1,5 +1,7 @@
 [ignore]
 build
+.*/node_modules/redux/.*
+.*/node_modules/rx/.*
 .*/node_modules/react/.*
 .*/node_modules/fbjs.*
 .*/node_modules/babel.*
